@@ -21,9 +21,12 @@ ul {
 }
 button {
   cursor: pointer;
+  border: none;
 }
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 body {
   font-family: Roboto, sans-serif;
@@ -93,6 +96,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-color);
+  transition: color 250ms linear;
 }
 .header-contacts-link {
   padding-top: 32px;
@@ -101,6 +105,23 @@ body {
   display: flex;
 }
 
+.link-navigation {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  position: relative;
+}
+.link-navigation:focus::after,
+.link-navigation:hover::after {
+  content: " ";
+  width: 100%;
+  height: 4px;
+  background-color: #2196f3;
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  border-radius: 2px;
+}
 .header-mail {
   font-weight: 500;
   font-size: 14px;
@@ -109,6 +130,7 @@ body {
   color: var(--text-color);
   display: flex;
   align-items: center;
+  transition: color 250ms linear;
 }
 .header-tel {
   font-weight: 500;
@@ -119,6 +141,7 @@ body {
   margin-left: 50px;
   display: flex;
   align-items: center;
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .header-contacts-icons {
   fill: #757575;
@@ -238,7 +261,27 @@ body {
 .whot-we-doing-list .whot-we-doing-item:not(:last-child) {
   margin-right: 30px;
 }
+.whot-we-doing-item {
+  position: relative;
+}
+.whot-we-doing-item > .work-text {
+  position: relative;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 27px 0px;
+  top: -70px;
+}
+
 /*-------teem-section------*/
+
 .teem-section {
   background-color: #f5f4fa;
   padding-top: 94px;
@@ -305,6 +348,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .teem-social-link:focus,
 .teem-social-link:hover {
@@ -347,6 +391,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .clients-conteiner-icons:hover,
 .clients-conteiner-icons:focus {
@@ -437,6 +482,7 @@ body {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .footer-social-link:focus,
 .footer-social-link:hover {
@@ -484,6 +530,7 @@ body {
   background: #f5f4fa;
   border-radius: 4px;
   padding: 6px 22px;
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .portfolio-picturs-list {
   display: flex;
@@ -492,12 +539,30 @@ body {
 .portfolio-picturs-item:not(:nth-child(3n)) {
   margin-right: 30px;
 }
-
+.portfolio-picturs-item:hover .portfolio-picturs-text {
+  transform: translateY(0%);
+}
 .portfolio-picturs-item {
   width: 370px;
   border: 1px solid #eeeeee;
 }
-
+.portfolio-picturs-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-picturs-text {
+  position: absolute;
+  top: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+}
 .portfolio-picturs-item:hover {
   background: #ffffff;
   border: 1px solid #eeeeee;
@@ -525,4 +590,42 @@ body {
   line-height: 1.87;
   letter-spacing: 0.03em;
   color: var(--text-color);
+}
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0px;
+  transition: opacity 250ms, visibility 250ms;
+}
+.modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-close {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }

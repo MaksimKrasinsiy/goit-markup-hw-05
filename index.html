@@ -10,13 +10,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/modern-normalize.css">   
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
      <title>Главная</title>
 </head>
 <body>
     <header class="header">
         <div class="conteiner header-conteiner">
             <nav class="header-nav">
-                <a class="logo" href="index.html"> <p class="first-logo-color">Web<span class="second-logo-color">Studio</span></p></a>
+                <a class="logo animate__animated animate__fadeInTopLeft" href="index.html"> <p class="first-logo-color">Web<span class="second-logo-color">Studio</span></p></a>
                 <ul class="list header-list-nav">
                     <li class="header-link-nav">
                         <a href="index.html" class="link-navigation link">Студия</a>
@@ -45,7 +46,7 @@
         <section class="hero-section">
             <div class="main-title conteiner">
                 <h1 class="title-text">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="title-button">Заказать услугу</button>
+                <button type="button" class="title-button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <section class="functions-section">
@@ -96,12 +97,15 @@
                 <ul class="list whot-we-doing-list">
                     <li class="whot-we-doing-item">
                         <img src="./images/box 1.jpg" alt="work" width="370" height="294">
+                        <p class="work-text">Десктопные приложения</p>
                     </li>
                     <li class="whot-we-doing-item">
                         <img src="./images/box 2.jpg" alt="work" width="370" height="294">
+                        <p class="work-text">Мобильные приложения</p>
                     </li>
                     <li class="whot-we-doing-item">
                         <img src="./images/box 3.jpg" alt="work" width="370" height="294">
+                        <p class="work-text">Дизайнерские решения</p>
                     </li>
                 </ul>
             </div>
@@ -368,5 +372,15 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close" data-modal-close>
+                <svg class="modal-close-icon" width="18" heigth="18" >
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
