@@ -111,8 +111,8 @@ body {
   padding-bottom: 32px;
   position: relative;
 }
-.link-navigation:focus::after,
-.link-navigation:hover::after {
+.header-line::after,
+.header-line::after {
   content: " ";
   width: 100%;
   height: 4px;
@@ -265,7 +265,7 @@ body {
   position: relative;
 }
 .whot-we-doing-item > .work-text {
-  position: relative;
+  position: absolute;
   background-color: rgba(47, 48, 58, 0.8);
   font-family: Roboto;
   font-weight: bold;
@@ -277,7 +277,7 @@ body {
   width: 100%;
   text-align: center;
   padding: 27px 0px;
-  top: -70px;
+  bottom: 0px;
 }
 
 /*-------teem-section------*/
@@ -391,7 +391,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 250ms linear, background-color 250ms linear;
 }
 .clients-conteiner-icons:hover,
 .clients-conteiner-icons:focus {
@@ -405,6 +404,7 @@ body {
 
 .clients-icons {
   fill: #afb1b8;
+  transition: fill 250ms linear;
 }
 
 /*------------------------------------footer--------------------------------*/
@@ -441,6 +441,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #ffffff;
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .footer-mail {
   font-family: Roboto;
@@ -450,6 +451,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .footer-tel {
   font-family: Roboto;
@@ -459,6 +461,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .footer-second-conteiner {
   padding-top: 12px;
